@@ -1,0 +1,13 @@
+asgiref==3.2.7
+Django==3.0.5
+django-cors-headers==3.2.1
+django-debug-toolbar==2.2
+djangorestframework==3.11.0
+gunicorn==20.0.4
+Pillow==7.1.2
+psycopg2-binary==2.8.5
+pytz==2020.1
+sqlparse==0.3.1
+whitenoise==5.0.1
+django-dotenv==1.4.2
+git+https://github.com/django-compressor/django-compressor.git
