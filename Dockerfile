@@ -8,7 +8,7 @@ WORKDIR /install
 # Install requirements and libraries.
 #   --no-cache allows users to install packages with an index that is updated and used on-the-fly and not cached locally
 RUN apk --no-cache --quiet add gcc make g++ bash git openssh \
-    postgresql-dev curl build-base libffi-dev python-dev py-pip \
+    postgresql-dev curl build-base libffi-dev python3-dev py-pip \
     jpeg-dev zlib-dev libsass-dev
 
 # Install pillow globally.
@@ -18,6 +18,7 @@ ENV LIBRARY_PATH=/lib:/usr/lib
 COPY requirements.txt /requirements.txt
 
 # Install project dependencies before copying the rest of the codebase.
+RUN pip install pip==20.1
 RUN python -m pip install --install-option="--prefix=/install" -r /requirements.txt
 
 # === [ STAGE 2 ] ===
